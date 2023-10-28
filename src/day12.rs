@@ -33,8 +33,6 @@ fn parse_input() -> (Vec<i8>, usize, usize, usize) {
   return (input, width, start, end);
 }
 
-// fn(x: usize, y: usize, c: i8) -> bool
-
 fn engine<F>(input: Vec<i8>, width: usize, start: usize, check: F) -> i32
 where
   F: Fn(usize, i8) -> bool,
