@@ -148,29 +148,6 @@ fn part1() -> i32 {
   return s.to - s.from;
 }
 
-fn part22() -> i64 {
-  let size = 4000000;
-
-  for row in (0..=size).rev() {
-    let segments = get_segments(row, 0, size);
-
-    if segments.len() == 1 {
-      continue;
-    }
-    if segments.len() != 2 {
-      panic!("Shouldn't be more than 2 segments");
-    }
-
-    let s = segments.first().unwrap();
-    let result: i64 = (s.to + 1).into();
-    let factor: i64 = size.into();
-    let row64: i64 = row.into();
-    return result * factor + row64;
-  }
-
-  panic!("Didn't find the answer");
-}
-
 fn part2() -> i64 {
   let sensors = parse_input();
   let mut lines = Vec::new();
@@ -194,10 +171,8 @@ fn part2() -> i64 {
       if la.a != lb.a {
         let x = (lb.c - la.c) / (la.a - lb.a);
         let y = la.a * x + la.c;
-        let x64: i64 = x.into();
-        let y64: i64 = y.into();
         let size: i64 = 4000000;
-        return x64 * size + y64;
+        return x * size + y;
       }
     }
   }
