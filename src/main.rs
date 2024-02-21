@@ -1,3 +1,5 @@
+use std::env;
+
 mod day01;
 mod day02;
 mod day03;
@@ -13,8 +15,16 @@ mod day12;
 mod day13;
 mod day14;
 mod day15;
+mod day16;
 
 fn main() {
+  let args: Vec<String> = env::args().collect();
+  let arg = args.get(1);
+  if arg.is_some() && arg.unwrap() == "x" {
+    day16::run();
+    return;
+  }
+
   day01::run();
   day02::run();
   day03::run();
@@ -30,4 +40,5 @@ fn main() {
   day13::run();
   day14::run();
   day15::run();
+  day16::run();
 }

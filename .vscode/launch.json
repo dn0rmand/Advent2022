@@ -11,7 +11,7 @@
       "cargo": {
         "args": ["build"]
       },
-      "args": []
+      "args": ["x"]
     }
   ]
 }
