@@ -18,12 +18,13 @@ mod day15;
 mod day16;
 mod day17;
 mod day18;
+mod day19;
 
 fn main() {
   let args: Vec<String> = env::args().collect();
   let arg = args.get(1);
   if arg.is_some() && arg.unwrap() == "x" {
-    day18::run();
+    day19::run();
     return;
   }
 
@@ -45,4 +46,5 @@ fn main() {
   day16::run();
   day17::run();
   day18::run();
+  day19::run();
 }
